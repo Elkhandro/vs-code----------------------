@@ -14,6 +14,13 @@ body {
     background: white; /* Белый фон для основного содержимого */
     min-height: 100vh; /* Минимальная высота равна высоте окна браузера */
     box-shadow: 0 0 30px rgba(0,0,0,0.1); /* Легкая тень вокруг всего контента */
+    display: grid; 
+    grid-template-rows: auto auto 1fr auto; 
+    grid-template-areas:  
+        "header" 
+        "nav" 
+        "main" 
+        "footer"; 
 }
 
 /* ===== ШАПКА ===== */
@@ -25,12 +32,14 @@ body {
     font-size: 28px; /* Размер шрифта */
     font-weight: 300; /* Легкое начертание шрифта */
     letter-spacing: 2px; /* Расстояние между буквами */
+    grid-area: header;
 }
 
 /* ===== НАВИГАЦИЯ ===== */
 .nav {
     background: #2c3e50; /* Темно-синий фон навигации */
     padding: 20px 0; /* Вертикальные отступы */
+    grid-area: nav;
 }
 
 .nav-list {
@@ -61,10 +70,11 @@ body {
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-.content {
+main.content {
     padding: 40px; /* Внутренние отступы контента */
     max-width: 900px; /* Максимальная ширина контента */
     margin: 0 auto; /* Центрирование контента */
+    grid-area: main;
 }
 
 /* ===== ГЛАВНАЯ СТРАНИЦА ===== */
@@ -114,10 +124,9 @@ body {
 }
 
 /* ===== НАВЫКИ ===== */
-.skills-container {
-    display: flex; /* Горизонтальное расположение навыков */
-    justify-content: center; /* Выравнивание по центру */
-    flex-wrap: wrap; /* Перенос на новую строку при необходимости */
+.skills-grid {
+    display: grid; /* Горизонтальное расположение навыков */
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Выравнивание по центру */
     gap: 15px; /* Расстояние между навыками */
     margin: 30px 0; /* Вертикальные отступы */
 }
@@ -131,6 +140,7 @@ body {
     font-size: 14px; /* Размер шрифта */
     box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3); /* Тень с голубым оттенком */
     transition: all 0.3s ease; /* Плавные анимации при изменении */
+    text-align: center;
 }
 
 .skill-tag:hover {
@@ -149,6 +159,11 @@ body {
     text-align: center; /* Выравнивание по центру */
     margin-bottom: 30px; /* Отступ снизу */
     font-weight: 300; /* Легкое начертание шрифта */
+}
+.experience-grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
 }
 
 .experience-card {
@@ -294,4 +309,22 @@ body {
     text-align: center; /* Выравнивание по центру */
     padding: 30px; /* Внутренние отступы */
     margin-top: 50px; /* Отступ сверху */
+    grid-area: footer;
 }
+/* ===== АДАПТИВНОСТЬ ===== */
+ /* Новое: Медиа-запросы для мобильных устройств */
+ @media (max-width: 768px) { 
+    .nav-list { 
+        flex-direction: column; 
+        gap: 10px; 
+}  
+.skills-grid { 
+    grid-template-columns: 1fr; 
+} 
+.experience-grid { 
+    grid-template-columns: 1fr; 
+} 
+main.content { 
+    padding: 20px; 
+} 
+} 
