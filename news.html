@@ -1,47 +1,98 @@
 <!DOCTYPE html>
-<html lang="ru">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Новости</title>
-        <link rel="stylesheet" href="style.css">
-    </head>
-    <body>
-        <div class="page-container">
-            <header class="header">
-                <h1>Новости</h1>
-                <button class="theme-switch" onclick="toggleTheme()">Переключить тему</button>
-            </header>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Главная</a></li>
-                    <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-                    <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-                    <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-                </ul>
-            </nav>
-             <main class="content">
-                <section class="news-container">
-                    <article class="news-card">
-                        <h2 class="news-title">Новость 1</h2>
-                        <p class="news-meta">20.09.2025 12:00 Э.И. Поладов</p>
-                        <p class="news-text">Протеин стал дешевле</p>
-                    </article>
-                    <article class="news-card">
-                        <h2 class="news-title">Новость 2</h2>
-                        <p class="news-meta">21.09.2025 12:00 Э.И. Поладов</p>
-                        <p class="news-text">Креатин стал дороже</p>
-                    </article>
-                    <article class="news-card">
-                        <h2 class="news-title">Новость 3</h2>
-                        <p class="news-meta">22.09.2025 12:00 Э.И. Поладов</p>
-                        <p class="news-text">Ожидается повышение цен на гейнер</p>
-                    </article>
-                </section>
-            </main>
-            <footer class="footer">
-            <p>Moscow-city 2025</p>
-        </footer>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Новости - Moscow-city</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Moscow-city 2025</h1>
+          <p class="header__subtitle">Спортивное питание</p>
+        </div>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Переключить тему"
+        >
+          <span class="theme-toggle__icon">🌙</span>
+          <span class="theme-toggle__text">Тёмная</span>
+        </button>
+      </header>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a class="nav__link" href="news.html" aria-current="page"
+              >Новости</a
+            >
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="goods.html">Товары</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main">
+        <section class="news">
+          <h1 class="section-title news__title">Новости</h1>
+
+          <div class="news__container">
+            <article class="news-card">
+              <h2 class="news-card__title">Новость 1</h2>
+              <div class="news-card__meta">
+                <time class="news-card__date">20.09.2025 12:00</time>
+                <span class="news-card__author">Э.И. Поладов</span>
+              </div>
+              <p class="news-card__text">
+                Текст новости 1. Протеин стал дешевле
+              </p>
+            </article>
+
+            <article class="news-card">
+              <h2 class="news-card__title">Новость 2</h2>
+              <div class="news-card__meta">
+                <time class="news-card__date">21.09.2025 12:00</time>
+                <span class="news-card__author">Э.И. Поладов</span>
+              </div>
+              <p class="news-card__text">
+                Текст новости 2. Креатин стал дороже
+              </p>
+            </article>
+
+            <article class="news-card">
+              <h2 class="news-card__title">Новость 3</h2>
+              <div class="news-card__meta">
+                <time class="news-card__date">22.09.2025 12:00</time>
+                <span class="news-card__author">Э.И. Поладов</span>
+              </div>
+              <p class="news-card__text">
+                Текст новости 3. Ожидается повышение цен на гейнер
+              </p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">
+            &copy; 2025 Moscow-city. Все права защищены.
+          </p>
+          <p class="footer__contact">Телефон: +7 (999) 123-45-67</p>
+        </div>
+      </footer>
     </div>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

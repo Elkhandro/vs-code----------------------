@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Товары - Moscow-city</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <div class="header__content">
+          <h1 class="header__title">Moscow-city 2025</h1>
+          <p class="header__subtitle">Спортивное питание</p>
+        </div>
+        <button
+          id="theme-toggle"
+          class="theme-toggle"
+          type="button"
+          aria-label="Переключить тему"
+        >
+          <span class="theme-toggle__icon">🌙</span>
+          <span class="theme-toggle__text">Тёмная</span>
+        </button>
+      </header>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="news.html">Новости</a>
+          </li>
+          <li class="nav__item nav__item--active">
+            <a class="nav__link" href="goods.html" aria-current="page"
+              >Товары</a
+            >
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main">
+        <section class="products-section">
+          <h1 class="section-title products-section__title">Наши товары</h1>
+          <p class="products-section__description">
+            Качественное спортивное питание для достижения ваших целей
+          </p>
+
+          <div class="products-grid">
+            <article class="product-card">
+              <div class="product-card__image-wrapper">
+                <img
+                  class="product-card__image"
+                  src="pages/protein.png"
+                  alt="Протеин Whey Gold Standard"
+                />
+              </div>
+              <div class="product-card__content">
+                <h2 class="product-card__title">Протеин Whey Gold</h2>
+                <p class="product-card__description">
+                  Высококачественный сывороточный протеин для роста мышц
+                </p>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">3 000 ₽</span>
+                  <span class="product-card__weight">2 кг</span>
+                </div>
+                <button
+                  class="btn btn--primary product-card__action"
+                  type="button"
+                >
+                  <span class="btn__text">В корзину</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card product-card--discount">
+              <div class="product-card__badge">Скидка 20%</div>
+              <div class="product-card__image-wrapper">
+                <img
+                  class="product-card__image"
+                  src="pages/creatine.png"
+                  alt="Креатин Monohydrate"
+                />
+              </div>
+              <div class="product-card__content">
+                <h2 class="product-card__title">Креатин Monohydrate</h2>
+                <p class="product-card__description">
+                  Чистый креатин для увеличения силы и выносливости
+                </p>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price product-card__price--old"
+                    >2 500 ₽</span
+                  >
+                  <span class="product-card__price">2 000 ₽</span>
+                  <span class="product-card__weight">500 г</span>
+                </div>
+                <button
+                  class="btn btn--primary product-card__action"
+                  type="button"
+                >
+                  <span class="btn__text">В корзину</span>
+                </button>
+              </div>
+            </article>
+
+            <article class="product-card product-card--selected">
+              <div class="product-card__badge product-card__badge--selected">
+                В корзине
+              </div>
+              <div class="product-card__image-wrapper">
+                <img
+                  class="product-card__image"
+                  src="pages/geynor.png"
+                  alt="Гейнер Serious Mass"
+                />
+              </div>
+              <div class="product-card__content">
+                <h2 class="product-card__title">Гейнер Serious Mass</h2>
+                <p class="product-card__description">
+                  Высококалорийная смесь для набора мышечной массы
+                </p>
+                <div class="product-card__price-wrapper">
+                  <span class="product-card__price">5 000 ₽</span>
+                  <span class="product-card__weight">3 кг</span>
+                </div>
+                <button
+                  class="btn btn--secondary product-card__action"
+                  type="button"
+                >
+                  <span class="btn__text">В корзине</span>
+                </button>
+              </div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <div class="footer__content">
+          <p class="footer__text">
+            &copy; 2025 Moscow-city. Все права защищены.
+          </p>
+          <p class="footer__contact">Телефон: +7 (999) 123-45-67</p>
+        </div>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

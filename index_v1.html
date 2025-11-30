@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Главная - Портфолио</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1 class="header__title">Моё портфолио</h1>
+        <button id="theme-toggle" class="theme-toggle">🌙 Тёмная</button>
+      </header>
+
+      <nav class="nav">
+        <ul class="nav__list">
+          <li class="nav__item nav__item--active">
+            <a class="nav__link" href="index.html">Главная</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="news.html">Новости</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="goods.html">Товары</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="contacts.html">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+
+      <main class="main">
+        <section class="profile">
+          <div class="profile-card">
+            <img
+              class="profile-card__photo"
+              src="pages/first photo web.jpg"
+              alt="Фото"
+            />
+            <div class="profile-card__info">
+              <h2 class="profile-card__name">Поладов Эльхан</h2>
+              <p class="profile-card__group">ЭФБО-16-24</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="about">
+          <h2 class="section-title">Обо мне</h2>
+          <div class="card">
+            <p class="about__text">
+              Я не ангел, но я не демон. Я всего лишь человек, который ищет то,
+              что нравится всем.
+            </p>
+          </div>
+        </section>
+
+        <section class="skills">
+          <h2 class="section-title">Мои навыки</h2>
+          <div class="skills__list">
+            <div class="skill-tag skill-tag--html">HTML</div>
+            <div class="skill-tag skill-tag--css">CSS</div>
+            <div class="skill-tag skill-tag--js">JavaScript</div>
+          </div>
+        </section>
+
+        <section class="projects">
+          <h2 class="section-title">Проекты</h2>
+          <div class="products-grid">
+            <article class="card">
+              <h3 class="product-card__title">Личный сайт</h3>
+              <p>Сайт-портфолио на HTML и CSS</p>
+            </article>
+            <article class="card">
+              <h3 class="product-card__title">Тodo приложение</h3>
+              <p>Простое приложение для задач</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <p class="footer__text">&copy; 2025 Moscow-city</p>
+      </footer>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
