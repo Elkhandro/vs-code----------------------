@@ -56,6 +56,102 @@
   --transition: all 0.3s ease;
 }
 
+/* Dark theme */
+[data-theme="dark"] {
+  /* Colors */
+  --primary-color: #3b82f6;
+  --primary-dark: #2563eb;
+  --primary-light: #60a5fa;
+
+  /* Text Colors */
+  --text-primary: #ffffff;
+  --text-secondary: #cbd5e1;
+  --text-light: #94a3b8;
+  --text-white: #ffffff;
+
+  /* Background Colors */
+  --bg-body: #0f172a;
+  --bg-card: #1e293b;
+  --bg-header: #0f172a;
+  --bg-footer: #0f172a;
+  --border-color: #334155;
+
+  /* Gradients */
+  --gradient-primary: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--primary-dark)
+  );
+  --gradient-dark: linear-gradient(135deg, #0f172a, #1e293b);
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.3),
+    0 4px 6px -4px rgb(0 0 0 / 0.3);
+}
+
+/* Дополнительные стили для темной темы */
+[data-theme="dark"] body {
+  background-color: var(--bg-body);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .card {
+  background-color: var(--bg-card);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .card-header {
+  background-color: rgba(30, 41, 59, 0.8) !important;
+  border-bottom-color: var(--border-color);
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #334155 !important;
+}
+
+[data-theme="dark"] .text-muted {
+  color: var(--text-secondary) !important;
+}
+
+[data-theme="dark"] .bg-dark {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+[data-theme="dark"] .progress {
+  background-color: #334155;
+}
+
+[data-theme="dark"] .btn-outline-light {
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+[data-theme="dark"] .btn-outline-light:hover {
+  background-color: var(--border-color);
+  border-color: var(--border-color);
+}
+
+[data-theme="dark"] .navbar-dark {
+  background-color: #1e293b !important;
+}
+
+[data-theme="dark"] .badge {
+  color: white;
+}
+
+[data-theme="dark"] .text-dark {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .bg-white {
+  background-color: var(--bg-card) !important;
+}
 /* Reset and Base Styles */
 * {
   margin: 0;

@@ -3,6 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Новости спортивного питания Moscow-city 2025. Актуальные обновления о ценах и продуктах."
+    />
     <title>Новости - Moscow-city</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -10,7 +14,9 @@
     <div class="page">
       <header class="header">
         <div class="header__content">
-          <h1 class="header__title">Moscow-city 2025</h1>
+          <h1 class="header__title" id="main-title">
+            Moscow-city 2025: Новости спортивного питания
+          </h1>
           <p class="header__subtitle">Спортивное питание</p>
         </div>
         <button
@@ -19,7 +25,6 @@
           type="button"
           aria-label="Переключить тему"
         >
-          <span class="theme-toggle__icon">🌙</span>
           <span class="theme-toggle__text">Тёмная</span>
         </button>
       </header>
@@ -45,39 +50,47 @@
 
       <main class="main">
         <section class="news">
-          <h1 class="section-title news__title">Новости</h1>
+          <h2 id="news-title" class="section-title news__title">
+            Последние новости
+          </h2>
 
           <div class="news__container">
-            <article class="news-card">
-              <h2 class="news-card__title">Новость 1</h2>
+            <article class="news-card" aria-labelledby="news1-title">
+              <h3 id="news1-title" class="news-card__title">
+                Снижение цен на протеин
+              </h3>
               <div class="news-card__meta">
                 <time class="news-card__date">20.09.2025 12:00</time>
                 <span class="news-card__author">Э.И. Поладов</span>
               </div>
               <p class="news-card__text">
-                Текст новости 1. Протеин стал дешевле
+                Протеин стал дешевле на 15% благодаря новым поставкам.
               </p>
             </article>
 
-            <article class="news-card">
-              <h2 class="news-card__title">Новость 2</h2>
+            <article class="news-card" aria-labelledby="news1-title">
+              <h3 id="news1-title" class="news-card__title">
+                Скидка на креатин
+              </h3>
               <div class="news-card__meta">
-                <time class="news-card__date">21.09.2025 12:00</time>
+                <time class="news-card__date">24.09.2025 23:00</time>
                 <span class="news-card__author">Э.И. Поладов</span>
               </div>
               <p class="news-card__text">
-                Текст новости 2. Креатин стал дороже
+                В честь черной пятницы - скидка на креатин
               </p>
             </article>
 
-            <article class="news-card">
-              <h2 class="news-card__title">Новость 3</h2>
+            <article class="news-card" aria-labelledby="news1-title">
+              <h3 id="news1-title" class="news-card__title">
+                Закрытие магазина
+              </h3>
               <div class="news-card__meta">
-                <time class="news-card__date">22.09.2025 12:00</time>
+                <time class="news-card__date">27.09.2025 15:00</time>
                 <span class="news-card__author">Э.И. Поладов</span>
               </div>
               <p class="news-card__text">
-                Текст новости 3. Ожидается повышение цен на гейнер
+                Из-за плохих покупок мы закрываем магазин
               </p>
             </article>
           </div>

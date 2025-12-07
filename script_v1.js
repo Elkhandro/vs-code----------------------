@@ -1,62 +1,89 @@
-/* script.js - универсальный для всех страниц */
+class ThemeManager {
+  constructor() {
+    this.themeToggleBtn =
+      document.getElementById("theme-toggle") ||
+      document.getElementById("themeToggle");
+    this.htmlElement = document.documentElement;
+    this.init();
+  }
 
-document.addEventListener("DOMContentLoaded", () => {
-  const themeToggleBtn = document.getElementById("theme-toggle");
-  if (!themeToggleBtn) return;
+  init() {
+    // Проверяем сохраненную тему
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
 
-  const htmlElement = document.documentElement;
+    // Устанавливаем тему
+    if (savedTheme) {
+      this.setTheme(savedTheme);
+    } else if (prefersDark) {
+      this.setTheme("dark");
+    }
 
-  // Проверка сохраненной темы
-  const savedTheme = localStorage.getItem("theme") || "light";
+    // Добавляем обработчик клика
+    if (this.themeToggleBtn) {
+      this.themeToggleBtn.addEventListener("click", () => this.toggleTheme());
+      this.updateButton();
+    }
 
-  // Установка начальной темы
-  htmlElement.setAttribute("data-bs-theme", savedTheme);
-  updateBtnText(savedTheme === "dark");
+    // Отслеживаем изменения системной темы
+    window
+      .matchMedia("(prefers-color-scheme: dark)")
+      .addEventListener("change", (e) => {
+        if (!localStorage.getItem("theme")) {
+          this.setTheme(e.matches ? "dark" : "light");
+        }
+      });
+  }
 
-  themeToggleBtn.addEventListener("click", () => {
-    const currentTheme = htmlElement.getAttribute("data-bs-theme");
+  setTheme(theme) {
+    // Устанавливаем тему для html элемента
+    if (theme === "dark") {
+      this.htmlElement.setAttribute("data-theme", "dark");
+    } else {
+      this.htmlElement.removeAttribute("data-theme");
+    }
+
+    localStorage.setItem("theme", theme);
+    this.updateButton();
+  }
+
+  toggleTheme() {
+    const currentTheme = this.getCurrentTheme();
     const newTheme = currentTheme === "dark" ? "light" : "dark";
+    this.setTheme(newTheme);
+  }
 
-    // Смена темы
-    htmlElement.setAttribute("data-bs-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    updateBtnText(newTheme === "dark");
-  });
+  getCurrentTheme() {
+    return this.htmlElement.hasAttribute("data-theme") ? "dark" : "light";
+  }
 
-  function updateBtnText(isDark) {
-    const icon = themeToggleBtn.querySelector("i");
-    const text = themeToggleBtn.querySelector(".theme-toggle__text");
+  updateButton() {
+    if (!this.themeToggleBtn) return;
 
+    const isDark = this.getCurrentTheme() === "dark";
+
+    // Обновляем иконку
+    const icon = this.themeToggleBtn.querySelector("i.bi");
     if (icon) {
       icon.className = isDark ? "bi bi-sun" : "bi bi-moon";
     }
-    if (text) {
-      text.textContent = isDark ? " Светлая" : " Тёмная";
-    }
-  }
-});
-// image-optimizer.js - добавляем в script.js
-function optimizeImages() {
-  // Lazy loading
-  const images = document.querySelectorAll('img[loading="lazy"]');
 
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.classList.add("loaded");
-        observer.unobserve(img);
-      }
-    });
-  });
+    // Обновляем текст кнопки
+    this.themeToggleBtn.innerHTML = isDark
+      ? '<i class="bi bi-sun" aria-hidden="true"></i> Светлая'
+      : '<i class="bi bi-moon" aria-hidden="true"></i> Тёмная';
 
-  images.forEach((img) => imageObserver.observe(img));
-
-  // Retina detection
-  if (window.devicePixelRatio > 1) {
-    document.documentElement.classList.add("retina");
+    // Обновляем aria-label
+    this.themeToggleBtn.setAttribute(
+      "aria-label",
+      isDark ? "Включить светлую тему" : "Включить тёмную тему"
+    );
   }
 }
 
-// Инициализация при загрузке
-document.addEventListener("DOMContentLoaded", optimizeImages);
+// Инициализация при загрузке страницы
+document.addEventListener("DOMContentLoaded", () => {
+  new ThemeManager();
+});
